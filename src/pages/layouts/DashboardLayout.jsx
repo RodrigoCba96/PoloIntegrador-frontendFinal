@@ -52,7 +52,6 @@ const PopMenu = () => {
                 onClick={() => setOpen(true)}
                 ref={menuRef}
             >
-                <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
             </IconButton>
             <MenuPopover open={open} onClose={() => setOpen(false)}
                 anchorEl={menuRef.current} sx={{
@@ -97,7 +96,7 @@ const MenuItem = ({ item }) => {
                                         <ListItemButton sx={{
                                             height: 42, fontWeight: '200',
                                             padding: th => th.spacing(0, 2.5, 0, 3),
-                                            
+
                                         }} >
                                             <ListItemIcon sx={{
                                                 width: 26, height: 26,

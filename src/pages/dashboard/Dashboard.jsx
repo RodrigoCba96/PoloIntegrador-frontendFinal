@@ -19,23 +19,23 @@ const Dashboard = ({ open, onClose }) => {
 
   return (
     <Grid container spacing={5}>
-    <Grid item xs={12}>
-      <Paper   sx={{
-        p: 4,
-        borderRadius: '80px',
-        transition: 'transform 0.3s, background-color 0.3s',
-        '&:hover': {
-          transform: 'scale(1.1)',
-          backgroundColor: '#28DC2F'   
-        },
-      }} >
+      <Grid item xs={12}>
+        <Paper sx={{
+          p: 4,
+          borderRadius: '80px',
+          transition: 'transform 0.3s, background-color 0.3s',
+          '&:hover': {
+            transform: 'scale(1.1)',
+            backgroundColor: '#28DC2F'
+          },
+        }} >
 
-        <Box sx={{ fontSize: '20px' }}>
-          Cursos inscriptos
-        </Box>
-      </Paper>
-    </Grid>
-   
+          <Box sx={{ fontSize: '20px' }}>
+            Cursos inscriptos
+          </Box>
+        </Paper>
+      </Grid>
+
 
       <Grid item xs={8}>
         <CompletedTasksCard completedTasks={completedTasks} />

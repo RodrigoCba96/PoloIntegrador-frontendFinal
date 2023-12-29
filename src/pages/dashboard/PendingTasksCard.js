@@ -14,7 +14,7 @@ const PendingTasksCard = ({ pendingTasks }) => {
       <CardContent>
 
         <Typography variant="h6">
-          Cursos pendientes: {pendingTasks.length}
+          Cursos sin seleccionar: {pendingTasks.length}
         </Typography>
       </CardContent>
     </Card>

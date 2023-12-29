@@ -14,7 +14,7 @@ const CompletedTasksCard = ({ completedTasks }) => {
       }}>
         <CardContent>
           <Typography variant="h6">
-            Cursos finalizados: {completedTasks.length}
+            Cursos seleccionados para iniciar: {completedTasks.length}
           </Typography>
         </CardContent>
       </Card>

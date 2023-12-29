@@ -20,47 +20,47 @@ const errorMessage = {
 const POST = async (url, payload) => {
     let res = null;
     try {
-    res = await axios.post(url, payload, headers());
-    return (res && res.data) || null
+        res = await axios.post(url, payload, headers());
+        return (res && res.data) || null
     } catch (error) {
-    throw (error && error.response.data.error) || errorMessage
+        throw (error && error.response.data.error) || errorMessage
     }
-    };
+};
 
-    const GET = async (url) => {
-        try {
-          const res = await axios.get(url, headers()); // Cambia de axios.post a axios.get
-          return (res && res.data) || null;
-        } catch (error) {
-          throw (error && error.response.data.error) || errorMessage;
-        }
-      };
-      
+const GET = async (url) => {
+    try {
+        const res = await axios.get(url, headers());
+        return (res && res.data) || null;
+    } catch (error) {
+        throw (error && error.response.data.error) || errorMessage;
+    }
+};
+
 
 const PATCH = async (url, payload) => {
     let res = null;
     try {
-    res = await axios.post(url, payload, headers());
-    return (res && res.data) || null
-    } catch (error) {
-    throw (error && error.response.data.error) || errorMessage
-    }
-    };
-
-    const DELETE = async (url, payload) => {
-        let res = null;
-        try {
         res = await axios.post(url, payload, headers());
         return (res && res.data) || null
-        } catch (error) {
+    } catch (error) {
         throw (error && error.response.data.error) || errorMessage
-        }
-        };
+    }
+};
+
+const DELETE = async (url, payload) => {
+    let res = null;
+    try {
+        res = await axios.post(url, payload, headers());
+        return (res && res.data) || null
+    } catch (error) {
+        throw (error && error.response.data.error) || errorMessage
+    }
+};
 
 export default {
     POST,
     GET,
     PATCH,
-    DELETE,   pokemons: `${BASE_URL}/pokemon`,
+    DELETE, pokemons: `${BASE_URL}/pokemon`,
 
 }

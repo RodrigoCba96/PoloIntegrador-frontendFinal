@@ -15,12 +15,12 @@ import {
   Checkbox,
   Typography,
   Autocomplete,
-  IconButton
+  IconButton,
+
 } from '@mui/material';
-// import { LocationOn as LocationOnIcon } from '@mui/icons-material';
+import { LocationOn as LocationOnIcon } from '@mui/icons-material';
 
-import MapComponent from "../../components/map";
-
+ 
 
 const Cursado = () => {
   const dispatch = useDispatch();
@@ -45,10 +45,21 @@ const Cursado = () => {
     dispatch(appActions.deleteCursado(id));
 
   };
- 
 
-  const [coordinates, setCoordinates] = useState({ latitude: 0, longitude: 0 });
+  const handleLocation = (id) => {
+    setShowImage(true);
+    console.log(`Abrir mapa para el curso con ID ${id}`);
+  };
 
+  const [showImage, setShowImage] = useState(false);
+  {showImage && (
+    <img
+      src="../../assets/images/unlar.png"
+      alt="ubicación del cursado"
+      style={{ width: '100%', height: 'auto', marginTop: '10px' }}
+    />
+  )}
+  
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
@@ -92,19 +103,16 @@ const Cursado = () => {
                   <Grid item md={2}>
                     <Stack direction="row" spacing={1}>
 
-
-                      {/* <IconButton
+                      {/* boton gps */}
+                      <IconButton
                         variant="contained"
                         onClick={() => handleLocation(t.id)}
                         size="small"
                         sx={{ color: 'info.main' }}>
                         <LocationOnIcon />
-                      </IconButton> */}
 
-                      {/* Mapa */}
-                      {coordinates.latitude !== 0 && coordinates.longitude !== 0 && (
-                        <MapComponent latitude={coordinates.latitude} longitude={coordinates.longitude} />
-                      )}
+
+                      </IconButton>
                       <Button variant="contained" onClick={() => delTask(t.id)}>
                         Eliminar
                       </Button>
